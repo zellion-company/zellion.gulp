@@ -1,0 +1,10 @@
+include ../includes/_mixins.pug
+doctype html
+html(lang="en")
+  include ../includes/_head.pug
+  body
+    .wrapper
+      include ../includes/_header.pug
+      block content
+      include ../includes/_footer.pug
+      include ../includes/_js.pug

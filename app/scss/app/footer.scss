@@ -1,0 +1,13 @@
+.footer{
+  width: 100%;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  flex: 0 0 auto;
+  &__copyright{
+    width: 1440px;
+    margin: 0 auto;
+    height: 60px;
+    @include flex(row, wrap, center, center);
+    @include font(false,16,$black,.2,false);
+  }
+}

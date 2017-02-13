@@ -1,0 +1,80 @@
+.header {
+  width: 100%;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  &__container {
+    width: 1440px;
+    margin: 0 auto;
+    height: 80px;
+    @include flex(row, wrap, space-between, center);
+  }
+  &__icon {
+    @include flex(row, wrap, fles-end, center);
+  }
+  &__github {
+    margin-left: 10px;
+    @include desktop-hover() {
+      svg {
+        fill: $black;
+      }
+    }
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: $gray;
+      transition: fill 0.2s ease-in-out;
+    }
+  }
+  &__logo {
+    @include font(com,30,$yellow,.025,700);
+  }
+  &__download {
+    height: 40px;
+    padding: 0 30px;
+    @include font(com,12,$black,.025,700);
+    @include flex(row, wrap, center, center);
+    text-transform: lowercase;
+    border-radius: 24px;
+    border: 3px solid $yellow;
+    transition: background 0.2s ease-in-out;
+    @include desktop-hover() {
+      background: $yellow;
+    }
+  }
+}
+.nav {
+  padding: 0;
+  list-style: none;
+  @include flex(row, wrap, center, center);
+  &__item {
+    &.active {
+      .nav__link {
+        color: $black;
+      }
+    }
+  }
+  &__link {
+    display: block;
+    @include flex(row, wrap, center, center);
+    height: 80px;
+    padding: 0 30px;
+    @include font(com,false,$gray,.025,700);
+    text-transform: uppercase;
+    transition: color 0.2s ease-in-out;
+    @include desktop-hover() {
+      color: $black;
+    }
+  }
+}
+.yellowLine {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid $yellow;
+  width: 0;
+  transition: left .5s ease, width .5s ease;
+}
