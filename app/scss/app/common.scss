@@ -61,7 +61,7 @@ body {
   width: 600px;
   background: #272822;
   padding: 20px;
-  line-height: 2em;
+  line-height: 1.6em;
   @include font(false,16,#fff,false,false);
   border-radius: 6px;
 }
@@ -75,7 +75,7 @@ body {
 .html{
   background: #272822;
   padding: 20px;
-  line-height: 2em;
+  line-height: 1.6em;
   @include font(false,16,#fff,false,false);
   border-radius: 6px;
 }

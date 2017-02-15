@@ -20,7 +20,7 @@ block content
       pre.pre.
         $('selector').zellionTabs();
     section.section#section-2
-      //- .heading Default Tab
+      //- .heading Default settings
       .tab
         ul.tab__list
           - var arr = [{link:'home-2', title:'home'}, {link:'archive-2', title:'archive'}, {link:'analytics-2', title:'analytics'}, {link:'upload-2', title:'upload'}, {link:'settings-2', title:'settings'}]
@@ -35,10 +35,10 @@ block content
               .tab__value= i++
       pre.pre.
         $('selector').zellionTabs({
-          defaultTab: 4
+          animation: 'fade'
         });
     section.section#section-3
-      //- .heading Autoplay
+      //- .heading Default Tab
       .tab
         ul.tab__list
           - var arr = [{link:'home-3', title:'home'}, {link:'archive-3', title:'archive'}, {link:'analytics-3', title:'analytics'}, {link:'upload-3', title:'upload'}, {link:'settings-3', title:'settings'}]
@@ -53,22 +53,85 @@ block content
               .tab__value= i++
       pre.pre.
         $('selector').zellionTabs({
+          animation: 'slide',
+          direction: 'left'
+        });
+    section.section#section-4
+      //- .heading Default Tab
+      .tab
+        ul.tab__list
+          - var arr = [{link:'home-4', title:'home'}, {link:'archive-4', title:'archive'}, {link:'analytics-4', title:'analytics'}, {link:'upload-4', title:'upload'}, {link:'settings-4', title:'settings'}]
+          for key in arr
+            li.tab__item
+              a.tab__link(href="#"+key.link)= key.title
+        .tab__container
+          - var arr = ['home-4', 'archive-4', 'analytics-4', 'upload-4', 'settings-4']
+          - var i = 1
+          for key in arr
+            .tab__content(id=""+key)
+              .tab__value= i++
+      pre.pre.
+        $('selector').zellionTabs({
+          animation: 'slide',
+          direction: 'bottom'
+        });
+    section.section#section-5
+      //- .heading Autoplay
+      .tab
+        ul.tab__list
+          - var arr = [{link:'home-5', title:'home'}, {link:'archive-5', title:'archive'}, {link:'analytics-5', title:'analytics'}, {link:'upload-5', title:'upload'}, {link:'settings-5', title:'settings'}]
+          for key in arr
+            li.tab__item
+              a.tab__link(href="#"+key.link)= key.title
+        .tab__container
+          - var arr = ['home-5', 'archive-5', 'analytics-5', 'upload-5', 'settings-5']
+          - var i = 1
+          for key in arr
+            .tab__content(id=""+key)
+              .tab__value= i++
+      pre.pre.
+        $('selector').zellionTabs({
+          defaultTab: 4
+        });
+    section.section#section-6
+      //- .heading Autoplay
+      .tab
+        ul.tab__list
+          - var arr = [{link:'home-6', title:'home'}, {link:'archive-6', title:'archive'}, {link:'analytics-6', title:'analytics'}, {link:'upload-6', title:'upload'}, {link:'settings-6', title:'settings'}]
+          for key in arr
+            li.tab__item
+              a.tab__link(href="#"+key.link)= key.title
+        .tab__container
+          - var arr = ['home-6', 'archive-6', 'analytics-6', 'upload-6', 'settings-6']
+          - var i = 1
+          for key in arr
+            .tab__content(id=""+key)
+              .tab__value= i++
+      pre.pre.
+        $('selector').zellionTabs({
           autoplay: true
         });
     .container
       h3.title Package Managers
       p.html bower install zellion --save
     .container
+      h3.title Connection scripts and styles
+      pre.html.
+        <span class="tag">&lt;link</span> <span class="sel">href=</span><span class="name">"/path/to/zellion.css",</span> <span class="sel">rel=</span><span class="name">"stylesheet"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;script</span> <span class="sel">src=</span><span class="name">"/path/to/zellion.tabs.js"</span><span class="tag">&gt;</span><span class="tag">&lt;script&gt;</span>
+    .container
       h3.title Required Markup
       pre.html.
-        <span class="tag">&lt;div</span> <span class="sel">class=</span><span class="name">"tab"</span><span class="tag">&gt;</span>
-          <span class="tag">&lt;ul</span> <span class="sel">class=</span><span class="name">"tab__list"</span><span class="tag">&gt;</span>
-            <span class="tag">&lt;li</span> <span class="sel">class=</span><span class="name">"tab__item"</span><span class="tag">&gt;</span><span class="tag">&lt;a</span> <span class="sel">href=</span><span class="name">"#tab-1"</span> <span class="sel">class=</span><span class="name">"tab__link"</span><span class="tag">&gt;</span>Tab 1<span class="tag">&lt;a&gt;</span><span class="tag">&lt;li&gt;</span>
-            <span class="tag">&lt;li</span> <span class="sel">class=</span><span class="name">"tab__item"</span><span class="tag">&gt;</span><span class="tag">&lt;a</span> <span class="sel">href=</span><span class="name">"#tab-2"</span> <span class="sel">class=</span><span class="name">"tab__link"</span><span class="tag">&gt;</span>Tab 2<span class="tag">&lt;a&gt;</span><span class="tag">&lt;li&gt;</span>
-          <span class="tag">&lt;ul&gt;</span>
-          <span class="tag">&lt;div</span> <span class="sel">class=</span><span class="name">"tab__container"</span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="sel">class=</span><span class="name">"tab__content"</span> <span class="id">id=</span><span class="name">"tab-1"</span><span class="tag">&gt;</span><span class="tag">&lt;div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="sel">class=</span><span class="name">"tab__content"</span> <span class="id">id=</span><span class="name">"tab-2"</span><span class="tag">&gt;</span><span class="tag">&lt;div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="sel">class=</span><span class="name">"Your selector which is initialized with Zellion"</span><span class="tag">&gt;</span>
+          <span class="tag">&lt;div</span> <span class="sel">class=</span><span class="name">"tab"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;ul</span> <span class="sel">class=</span><span class="name">"tab__list"</span><span class="tag">&gt;</span>
+              <span class="tag">&lt;li</span> <span class="sel">class=</span><span class="name">"tab__item"</span><span class="tag">&gt;</span><span class="tag">&lt;a</span> <span class="sel">href=</span><span class="name">"#tab-1"</span> <span class="sel">class=</span><span class="name">"tab__link"</span><span class="tag">&gt;</span>Tab 1<span class="tag">&lt;a&gt;</span><span class="tag">&lt;li&gt;</span>
+              <span class="tag">&lt;li</span> <span class="sel">class=</span><span class="name">"tab__item"</span><span class="tag">&gt;</span><span class="tag">&lt;a</span> <span class="sel">href=</span><span class="name">"#tab-2"</span> <span class="sel">class=</span><span class="name">"tab__link"</span><span class="tag">&gt;</span>Tab 2<span class="tag">&lt;a&gt;</span><span class="tag">&lt;li&gt;</span>
+            <span class="tag">&lt;ul&gt;</span>
+            <span class="tag">&lt;div</span> <span class="sel">class=</span><span class="name">"tab__container"</span><span class="tag">&gt;</span>
+              <span class="tag">&lt;div</span> <span class="sel">class=</span><span class="name">"tab__content"</span> <span class="id">id=</span><span class="name">"tab-1"</span><span class="tag">&gt;</span><span class="tag">&lt;div&gt;</span>
+              <span class="tag">&lt;div</span> <span class="sel">class=</span><span class="name">"tab__content"</span> <span class="id">id=</span><span class="name">"tab-2"</span><span class="tag">&gt;</span><span class="tag">&lt;div&gt;</span>
+            <span class="tag">&lt;div&gt;</span>
           <span class="tag">&lt;div&gt;</span>
         <span class="tag">&lt;div&gt;</span>
     .container
@@ -87,13 +150,23 @@ block content
         .tr
           .td animation
           .td string
-          .td "fade", "show" ("fade")
+          .td "show", "fade", "slide" ("show")
           .td Animation tab change.
         .tr
           .td speed
           .td number
-          .td 400
+          .td 300
           .td Animation speed change tabs.
+        .tr
+          .td direction
+          .td string
+          .td "left", "top", "right", "bottom" ("left")
+          .td Direction animation. Works only if you selected animation: "slide"
+        .tr
+          .td scope
+          .td string
+          .td "200px"
+          .td Scope animation. Works only if you selected animation: "slide"
         .tr
           .td autoplay
           .td boolean
@@ -112,5 +185,10 @@ block content
         .tr
           .td beforeChange
           .td function
-          .td false
-          .td Autoplay tab change.
+          .td
+          .td A function that is played before animation
+        .tr
+          .td afterChange
+          .td function
+          .td
+          .td A function that is played after animation
