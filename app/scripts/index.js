@@ -1,8 +1,17 @@
-import { markupMenu } from './markup-menu';
+import {
+  markupMenu
+} from './markup-menu';
 markupMenu(window.document);
 import navigation from "./navigation";
 
 $(() => {
+  $(window).on('load scroll', function() {
+    if ($(this).scrollTop() > 0) {
+      $('.header').addClass('active');
+    } else {
+      $('.header').removeClass('active');
+    }
+  });
   navigation();
   $('#section-1').zellionTabs();
   $('#section-2').zellionTabs({

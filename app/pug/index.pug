@@ -1,3 +1,12 @@
 extends ./layouts/_layout.pug
 block content
-  .inner#index
+  .main
+    .main__container
+      .main__description
+        .main__title Zellion developer design kit
+        .main__subtitle Zellion makes front-end web development faster and easier. It's made for folks of all skill levels, devices of all shapes, and projects of all sizes.
+        .main__block
+          a.main__purchase(href="#") purchase
+          a.main__try(href="#") try
+      +data('home.jpg').main__img
+    .inner#index
